@@ -20,8 +20,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - proxy-data:/etc/nginx/vhost.d
       - proxy-data:/usr/share/nginx/html
-    volumes_from:
-      - nginx-proxy
     restart: always
     networks: 
       - ssl_proxy
