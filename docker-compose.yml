@@ -13,6 +13,8 @@ services:
       - proxy-data:/usr/share/nginx/html
       - ./my_custom_proxy_settings.conf:/etc/nginx/conf.d/my_custom_proxy_settings.conf
     restart: always
+    networks: 
+      - ssl_proxy
   letsencrypt:  
     image: jrcs/letsencrypt-nginx-proxy-companion
     depends_on:
