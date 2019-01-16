@@ -14,6 +14,7 @@ services:
       - proxy-data:/etc/nginx/vhost.d
       - proxy-data:/usr/share/nginx/html
       - ./my_custom_proxy_settings.conf:/etc/nginx/conf.d/my_custom_proxy_settings.conf
+      - ./x-forwarded-for.conf:/etc/nginx/conf.d/x-forwarded-for.conf
     restart: always
     networks: 
       - ssl_proxy
