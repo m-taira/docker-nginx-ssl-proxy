@@ -2,6 +2,8 @@ version: "3"
 services:
   nginx-proxy:
     image: jwilder/nginx-proxy:latest
+    environment:
+      TZ: Asia/Tokyo
     ports: 
       - "80:80"
       - "443:443"
@@ -19,6 +21,8 @@ services:
       - ssl_proxy
   letsencrypt:  
     image: jrcs/letsencrypt-nginx-proxy-companion
+    environment:
+      TZ: Asia/Tokyo
     depends_on:
       - nginx-proxy
     volumes:
